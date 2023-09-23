@@ -10,7 +10,7 @@ using audiamus.aux.win;
 using static audiamus.aux.Logging;
 
 namespace audiamus.aaxconv {
-  using R = AaxAudioConverter.Properties.Resources;
+  using R = Properties.Resources;
 
   partial class PreviewForm : FileItemForm {
     #region Private Fields

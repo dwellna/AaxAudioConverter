@@ -6,7 +6,7 @@ using audiamus.aux.ex;
 using audiamus.aux.win;
 
 namespace audiamus.aaxconv {
-  using R = AaxAudioConverter.Properties.Resources;
+  using R = Properties.Resources;
 
   partial class FileDetailsForm : FileItemForm {
 

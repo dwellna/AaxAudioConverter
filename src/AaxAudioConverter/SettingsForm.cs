@@ -13,7 +13,7 @@ using audiamus.aux.win;
 using static audiamus.aux.ApplEnv;
 
 namespace audiamus.aaxconv {
-  using R = AaxAudioConverter.Properties.Resources;
+  using R = Properties.Resources;
 
   partial class SettingsForm : Form {
     public const string PART = "Part";

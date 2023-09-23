@@ -23,7 +23,7 @@ namespace audiamus.aaxconv {
 
         Text = $"{Owner.Text}, Version {version.ToString (fields)} : {Text}";
 
-        richTextBox1.Rtf = AaxAudioConverter.Properties.Resources.LatestRtf;
+        richTextBox1.Rtf = Properties.Resources.LatestRtf;
       } catch (Exception) {
       }
     }

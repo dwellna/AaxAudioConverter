@@ -24,7 +24,7 @@ using Timer = System.Windows.Forms.Timer;
 
 namespace audiamus.aaxconv {
 
-  using R = AaxAudioConverter.Properties.Resources;
+  using R = Properties.Resources;
 
   public partial class MainForm : Form {
 

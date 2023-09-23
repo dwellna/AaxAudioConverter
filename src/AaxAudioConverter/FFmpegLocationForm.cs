@@ -7,7 +7,7 @@ using audiamus.aux.win;
 
 namespace audiamus.aaxconv {
   using System.ComponentModel;
-  using R = AaxAudioConverter.Properties.Resources;
+  using R = Properties.Resources;
 
   partial class FFmpegLocationForm : Form {
     readonly IAppSettings _settings = Properties.Settings.Default;

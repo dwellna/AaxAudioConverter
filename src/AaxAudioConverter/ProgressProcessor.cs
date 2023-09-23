@@ -11,7 +11,7 @@ using static audiamus.aaxconv.lib.ProgressInfo;
 using static audiamus.aux.Logging;
 
 namespace audiamus.aaxconv {
-  using R = AaxAudioConverter.Properties.Resources;
+  using R = Properties.Resources;
 
   class ProgressProcessor {
 

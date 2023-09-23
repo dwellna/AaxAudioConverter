@@ -5,7 +5,7 @@ using audiamus.aux.ex;
 using audiamus.aux.win;
 
 namespace audiamus.aaxconv {
-  using R = AaxAudioConverter.Properties.Resources;
+  using R = Properties.Resources;
 
   partial class GenresForm : Form {
     private readonly lib.IConvSettings _settings;

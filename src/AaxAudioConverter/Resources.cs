@@ -4,7 +4,7 @@ using audiamus.aux.ex;
 
 namespace audiamus.aaxconv {
 
-  using R = AaxAudioConverter.Properties.Resources;
+  using R = Properties.Resources;
 
   class Resources : IResources {
     private static Resources __resources;
