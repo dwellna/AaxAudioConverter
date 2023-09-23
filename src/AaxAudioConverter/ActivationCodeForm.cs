@@ -10,21 +10,21 @@ using static audiamus.aux.Logging;
 
 namespace audiamus.aaxconv {
 
-  using R = Properties.Resources;
+  using R = AaxAudioConverter.Properties.Resources;
 
   partial class ActivationCodeForm : Form {
     readonly IAppSettings _settings = Properties.Settings.Default;
-    readonly bool _suppressMsgBox;
+    readonly bool _suppressMessageBox;
     uint? _code;
 
     static readonly Regex _rgx = new Regex (@"^(([a-fA-F0-9]{2})\W?){3}([a-fA-F0-9]{2})$", RegexOptions.Compiled);
 
     private IAppSettings Settings => _settings;
 
-    public ActivationCodeForm (bool suppressMsgBox = false) {
+    public ActivationCodeForm (bool suppressMessageBox = false) {
       InitializeComponent ();
 
-      _suppressMsgBox = suppressMsgBox;
+      _suppressMessageBox = suppressMessageBox;
 
       textBox1.Text = Settings.ActivationCode.ToHexDashString ();
       
@@ -67,8 +67,8 @@ namespace audiamus.aaxconv {
         Log (2, this, "custom code removed");
       }
 
-      if (Settings.ActivationCode != _code && !_suppressMsgBox) 
-        MsgBox.Show (this, msg, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+      if (Settings.ActivationCode != _code && !_suppressMessageBox) 
+        MessageBox.Show (this, msg, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
       
       Settings.ActivationCode = _code;
 

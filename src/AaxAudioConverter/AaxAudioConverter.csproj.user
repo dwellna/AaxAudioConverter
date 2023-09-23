@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Update="AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ActivationCodeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FFmpegLocationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FileDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FileItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GenresForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PreviewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="StartupTipForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="WhatsNewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

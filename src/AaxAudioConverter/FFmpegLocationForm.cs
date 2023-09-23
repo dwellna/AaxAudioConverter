@@ -7,19 +7,19 @@ using audiamus.aux.win;
 
 namespace audiamus.aaxconv {
   using System.ComponentModel;
-  using R = Properties.Resources;
+  using R = AaxAudioConverter.Properties.Resources;
 
   partial class FFmpegLocationForm : Form {
     readonly IAppSettings _settings = Properties.Settings.Default;
     readonly string _origFFMpegDirectory;
 
-    readonly AaxAudioConverter _converter;
+    readonly audiamus.aaxconv.lib.AaxAudioConverter _converter;
     readonly Func<InteractionMessage, bool?> _callback;
 
     private IAppSettings Settings => _settings;
 
 
-    public FFmpegLocationForm (AaxAudioConverter converter, Func<InteractionMessage, bool?> callback) {
+    public FFmpegLocationForm (audiamus.aaxconv.lib.AaxAudioConverter converter, Func<InteractionMessage, bool?> callback) {
       InitializeComponent ();
       _converter = converter;
       _callback = callback;
@@ -83,7 +83,7 @@ namespace audiamus.aaxconv {
 
     private void enableOK () {
       //"Location and verification successful"
-      MsgBox.Show (this, R.MsgLocationVerifSucc, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+      MessageBox.Show (this, R.MsgLocationVerifSucc, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
       btnOK.Enabled = true;
       this.AcceptButton = btnOK;
       this.ActiveControl = btnOK;

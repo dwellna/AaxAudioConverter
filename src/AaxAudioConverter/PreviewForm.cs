@@ -10,7 +10,7 @@ using audiamus.aux.win;
 using static audiamus.aux.Logging;
 
 namespace audiamus.aaxconv {
-  using R = Properties.Resources;
+  using R = AaxAudioConverter.Properties.Resources;
 
   partial class PreviewForm : FileItemForm {
     #region Private Fields
@@ -40,7 +40,7 @@ namespace audiamus.aaxconv {
     public override void Set (AaxFileItem fileItem) {
 
       if (hasCustomization ()) {
-        var result = MsgBox.Show (
+        var result = MessageBox.Show (
           this, R.MsgPreviewUnsavedChanges, this.Text, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
         switch (result) {
           case DialogResult.Cancel:

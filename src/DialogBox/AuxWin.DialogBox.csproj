@@ -8,6 +8,8 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\AuxLib\AuxLib.csproj" />
+	  <ProjectReference Include="..\AuxWin32Lib\AuxWin32Lib.csproj" />
+	  <ProjectReference Include="..\AuxWinLib\AuxWinLib.csproj" />
 	</ItemGroup>
 
 </Project>

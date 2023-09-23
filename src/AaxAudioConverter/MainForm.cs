@@ -24,13 +24,13 @@ using Timer = System.Windows.Forms.Timer;
 
 namespace audiamus.aaxconv {
 
-  using R = Properties.Resources;
+  using R = AaxAudioConverter.Properties.Resources;
 
   public partial class MainForm : Form {
 
     #region Private Fields
 
-    private readonly AaxAudioConverter _converter;
+    private readonly audiamus.aaxconv.lib.AaxAudioConverter _converter;
     private readonly List<AaxFileItemEx> _fileItems = new List<AaxFileItemEx> ();
     private readonly ListViewColumnSorter _lvwColumnSorter;
     private readonly IAppSettings _settings = Properties.Settings.Default;
@@ -91,7 +91,7 @@ namespace audiamus.aaxconv {
 
       Settings.FixNarrator ();
 
-      _converter = new AaxAudioConverter (Settings, Resources.Default);
+      _converter = new audiamus.aaxconv.lib.AaxAudioConverter (Settings, Resources.Default);
 
       initRadionButtons ();
 
@@ -151,7 +151,7 @@ namespace audiamus.aaxconv {
       CommonFileDialogResult result = ofd.ShowDialog ();
       if (result == CommonFileDialogResult.Cancel) {
         if (!string.IsNullOrWhiteSpace (cancelMessage) && !Directory.Exists (directory))
-          MsgBox.Show (owner, cancelMessage, caption, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+          MessageBox.Show (owner, cancelMessage, caption, MessageBoxButtons.OK, MessageBoxIcon.Warning);
         return null;
       }
 
@@ -782,7 +782,7 @@ namespace audiamus.aaxconv {
     }
 
     private void btnRem_Click (object sender, EventArgs e) {
-      var result = MsgBox.Show (this, R.MsgRemSelFiles, this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+      var result = MessageBox.Show (this, R.MsgRemSelFiles, this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
       if (result != DialogResult.Yes)
         return;
 
@@ -986,7 +986,7 @@ namespace audiamus.aaxconv {
 
       msg = addFileErrors (msg);
 
-      MsgBox.Show (this, msg, this.Text,
+      MessageBox.Show (this, msg, this.Text,
         MessageBoxButtons.OK, mbIcon);
 
       _progress.Reset ();

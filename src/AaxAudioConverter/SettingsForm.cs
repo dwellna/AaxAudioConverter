@@ -13,13 +13,13 @@ using audiamus.aux.win;
 using static audiamus.aux.ApplEnv;
 
 namespace audiamus.aaxconv {
-  using R = Properties.Resources;
+  using R = AaxAudioConverter.Properties.Resources;
 
   partial class SettingsForm : Form {
     public const string PART = "Part";
 
     private readonly IAppSettings _settings = Properties.Settings.Default;
-    private readonly AaxAudioConverter _converter;
+    private readonly audiamus.aaxconv.lib.AaxAudioConverter _converter;
     private readonly Func<InteractionMessage, bool?> _callback;
     private bool _flag;
     private bool _enabled = true;
@@ -48,7 +48,7 @@ namespace audiamus.aaxconv {
 
     private IAppSettings Settings => _settings;
 
-    public SettingsForm (AaxAudioConverter converter, Func<InteractionMessage, bool?> callback) {
+    public SettingsForm (audiamus.aaxconv.lib.AaxAudioConverter converter, Func<InteractionMessage, bool?> callback) {
       using (new ResourceGuard (x => _flag = x))
         InitializeComponent ();
 
@@ -345,10 +345,10 @@ namespace audiamus.aaxconv {
     }
 
     private void btnReset_Click (object sender, EventArgs e) {
-      if (MsgBox.Show (this, R.MsgResetAllSettings, 
+      if (MessageBox.Show (this, R.MsgResetAllSettings, 
         this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) != DialogResult.Yes)
         return;
-      if (MsgBox.Show (this, R.MsgAllModifLost, 
+      if (MessageBox.Show (this, R.MsgAllModifLost, 
         this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) != DialogResult.Yes)
         return;
 
@@ -394,7 +394,7 @@ namespace audiamus.aaxconv {
       if (Culture.ChangeLanguage (comBoxLang, Settings)) {
         Settings.Save ();
 
-        if (MsgBox.Show (this, $"{ApplName} {R.MsgLangRestart}", Owner.Text, MessageBoxButtons.YesNo,
+        if (MessageBox.Show (this, $"{ApplName} {R.MsgLangRestart}", Owner.Text, MessageBoxButtons.YesNo,
             MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) != DialogResult.Yes)
           return;
 
@@ -511,7 +511,7 @@ namespace audiamus.aaxconv {
       btnAaxCopyDir.Enabled = _cbAdapterAaxCopyMode.Value != default;
       if (btnAaxCopyDir.Enabled) {
         if (string.IsNullOrWhiteSpace (Settings.AaxCopyDirectory) || !Directory.Exists(Settings.AaxCopyDirectory))
-          MsgBox.Show (this, R.MsgAaxCopyNoFolderYet, R.MsgAaxCopyFolder, MessageBoxButtons.OK, MessageBoxIcon.Information);
+          MessageBox.Show (this, R.MsgAaxCopyNoFolderYet, R.MsgAaxCopyFolder, MessageBoxButtons.OK, MessageBoxIcon.Information);
         return;
       }
     }

@@ -15,25 +15,25 @@ namespace audiamus.aux.win {
     public virtual bool? Interact (InteractionMessage im) {
       switch (im.Type) {
         default:
-          MsgBox.Show (Parent, im.Message, Parent.Text, MessageBoxButtons.OK, MessageBoxIcon.None);
+          MessageBox.Show (Parent, im.Message, Parent.Text, MessageBoxButtons.OK, MessageBoxIcon.None);
           break;
         case ECallbackType.info:
-          MsgBox.Show (Parent, im.Message, Parent.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+          MessageBox.Show (Parent, im.Message, Parent.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
           break;
         case ECallbackType.infoCancel:
-          return MsgBox.Show (Parent, im.Message, Parent.Text, MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK;
+          return MessageBox.Show (Parent, im.Message, Parent.Text, MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK;
         case ECallbackType.warning:
-          MsgBox.Show (Parent, im.Message, Parent.Text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+          MessageBox.Show (Parent, im.Message, Parent.Text, MessageBoxButtons.OK, MessageBoxIcon.Warning);
           break;
         case ECallbackType.error:
-          MsgBox.Show (Parent, im.Message, Parent.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+          MessageBox.Show (Parent, im.Message, Parent.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
           break;
         case ECallbackType.errorQuestion:
-          return MsgBox.Show (Parent, im.Message, Parent.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes;
+          return MessageBox.Show (Parent, im.Message, Parent.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes;
         case ECallbackType.errorQuestion3:
           return threewayQuestion (im, true);
         case ECallbackType.question:
-          return MsgBox.Show (Parent, im.Message, Parent.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes;
+          return MessageBox.Show (Parent, im.Message, Parent.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes;
         case ECallbackType.question3: {
             SystemSounds.Exclamation.Play ();
             return threewayQuestion (im);
@@ -44,7 +44,7 @@ namespace audiamus.aux.win {
     }
 
     private bool? threewayQuestion (InteractionMessage im, bool errorIcon = false) {
-      var result = MsgBox.Show (
+      var result = MessageBox.Show (
         Parent, im.Message, Parent.Text, 
         MessageBoxButtons.YesNoCancel, errorIcon ? MessageBoxIcon.Error : MessageBoxIcon.Question);
       switch (result) {

@@ -13,12 +13,12 @@ using System.Threading;
 using System.Threading.Tasks;
 using audiamus.aaxconv.lib.ex;
 using audiamus.aux;
-using audiamus.aux.diagn;
 using audiamus.aux.ex;
 using static audiamus.aux.ApplEnv;
 using static audiamus.aux.Logging;
 using Encoding = audiamus.aux.Encoding;
 using AACM = audiamus.aaxconv.lib.AudibleAppContentMetadata;
+using audiamus.aux.diagn;
 
 namespace audiamus.aaxconv.lib {
   public partial class AaxAudioConverter : IPreviewTitle, IDisposable {

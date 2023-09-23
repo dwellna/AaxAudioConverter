@@ -5,7 +5,7 @@ using audiamus.aux.ex;
 using audiamus.aux.win;
 
 namespace audiamus.aaxconv {
-  using R = Properties.Resources;
+  using R = AaxAudioConverter.Properties.Resources;
 
   partial class GenresForm : Form {
     private readonly lib.IConvSettings _settings;
@@ -25,7 +25,7 @@ namespace audiamus.aaxconv {
 
     private void btnOK_Click (object sender, EventArgs e) {
       if (listBox.SelectedIndices.Count > 0) {
-        var result = MsgBox.Show (this, R.MsgRemoveGenres, Owner.Text, MessageBoxButtons.YesNo, 
+        var result = MessageBox.Show (this, R.MsgRemoveGenres, Owner.Text, MessageBoxButtons.YesNo, 
           MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
 
         if (result == DialogResult.Yes) {

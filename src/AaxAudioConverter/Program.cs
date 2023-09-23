@@ -2,8 +2,10 @@
 using System.Globalization;
 using System.Threading;
 using System.Windows.Forms;
+using audiamus.aaxconv.Properties;
 using audiamus.aux;
 using audiamus.aux.win;
+using Newtonsoft.Json;
 
 namespace audiamus.aaxconv {
   static class Program {
@@ -25,6 +27,7 @@ namespace audiamus.aaxconv {
           Logging.Level = (int)loglevel;
         }
 
+        var serializedSettings = JsonConvert.SerializeObject(new Settings());
         Application.EnableVisualStyles ();
         Application.SetCompatibleTextRenderingDefault (false);
 

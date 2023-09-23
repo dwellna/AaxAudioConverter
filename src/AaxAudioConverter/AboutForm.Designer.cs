@@ -38,7 +38,7 @@
       // lblIcon
       // 
       resources.ApplyResources(this.lblIcon, "lblIcon");
-      this.lblIcon.Image = global::audiamus.aaxconv.Properties.Resources.Audio48;
+      this.lblIcon.Image = global::AaxAudioConverter.Properties.Resources.Audio48;
       this.lblIcon.Name = "lblIcon";
       // 
       // button1

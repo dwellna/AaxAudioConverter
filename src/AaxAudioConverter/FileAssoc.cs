@@ -9,7 +9,7 @@ using static audiamus.aux.Logging;
 
 namespace audiamus.aaxconv {
 
-  using R = Properties.Resources;
+  using R = AaxAudioConverter.Properties.Resources;
 
   class FileAssoc {
     readonly IAppSettings _settings;
@@ -38,7 +38,7 @@ namespace audiamus.aaxconv {
       if (!Settings.FileAssoc.HasValue) {
 
         string msg = $"{R.MsgFileAssoc} {ApplName}?";
-        var result = MsgBox.Show (_owner, msg, _fileDesc, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        var result = MessageBox.Show (_owner, msg, _fileDesc, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
         Settings.FileAssoc = result == DialogResult.Yes;
         if (result != DialogResult.Yes)

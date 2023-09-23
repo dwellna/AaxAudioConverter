@@ -1,11 +1,11 @@
-﻿using System;
+﻿using audiamus.aux.ex;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using audiamus.aux.ex;
 
 namespace audiamus.aux.diagn {
 
@@ -83,11 +83,10 @@ namespace audiamus.aux.diagn {
     /// <param name="ind">The indentation.</param>
     /// <param name="falgs">The output modifier flags.</param>
     /// <param name="caption">The optional caption for this indentation level.</param>
-    public void Dump (object o, TextWriter tw, Indent ind, EDumpFlags flags = default, string caption = null) =>
-      dump (o, new Stack<Type> (), tw, ind, flags, caption, null, null, null, false);
+    public void Dump(object o, TextWriter tw, Indent ind, EDumpFlags flags = default, string caption = null) =>
+        dump(o, new Stack<Type>(), tw, ind, flags, caption, null, null, null, false);
 
-
-    private void dump (
+        private void dump (
       object o, Stack<Type> stack, TextWriter tw, Indent ind, EDumpFlags flags,
       string caption, string itemCaption, CustomFormat itemFormat, string oDesc, bool inEnum
     ) {

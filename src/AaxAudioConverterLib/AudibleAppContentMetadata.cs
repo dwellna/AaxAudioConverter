@@ -1,16 +1,16 @@
-﻿using System;
+﻿using audiamus.aux.ex;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using audiamus.aux.ex;
-using Newtonsoft.Json;
 using static audiamus.aux.Logging;
-using AA = audiamus.aaxconv.lib.AudibleAppContentMetadata;
 
-namespace audiamus.aaxconv.lib {
-  class AudibleAppContentMetadata {
+namespace audiamus.aaxconv.lib
+{
+    class AudibleAppContentMetadata {
 
     [Flags]
     internal enum EFlags {
@@ -157,7 +157,7 @@ namespace audiamus.aaxconv.lib {
 
       foreach (var ch in metaChapters) {
         var chapter = new Chapter ();
-        chapter.Name = ch.title.Trim ();
+        chapter.Name = expandNumbersInString(ch.title.Trim(), 3);
         chapter.Time.Begin = TimeSpan.FromMilliseconds (ch.start_offset_ms);
         chapter.Time.End = TimeSpan.FromMilliseconds (ch.start_offset_ms + ch.length_ms);
         chapters.Add (chapter);
@@ -171,6 +171,26 @@ namespace audiamus.aaxconv.lib {
 
       Log (3, this, () => chapterList(part));
     }
+
+        private string expandNumbersInString(string text, int digits)
+        {
+            Regex regex = new Regex(@"[\d]+");
+            var matchCollection = regex.Matches(text);
+            var additionalPadding = 0;
+            foreach (Match match in matchCollection)
+            {
+                if (!int.TryParse(match.Value, out var number))
+                {
+                    continue;
+                }
+
+                text = text.Remove(match.Index + additionalPadding, match.Length);
+                text = text.Insert(match.Index + additionalPadding, $"{number:D3}");
+                additionalPadding += 2;
+            }
+
+            return text;
+        }
 
     private string chapterList (Book.Part part) {
       var sb = new StringBuilder ($"content meta chapters:");

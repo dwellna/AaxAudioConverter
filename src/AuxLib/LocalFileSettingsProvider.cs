@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Configuration;
 using System.IO;
+using System.Text.Json.Serialization;
 using static audiamus.aux.ApplEnv;
 
 namespace audiamus.aux {

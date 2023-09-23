@@ -1,8 +1,9 @@
-﻿using System;
-using audiamus.aux.w32;
+﻿using audiamus.aux.w32;
+using System;
 
-namespace audiamus.aaxconv.lib {
-  interface IFileCopyCallout {
+namespace audiamus.aaxconv.lib
+{
+    interface IFileCopyCallout {
     void ProcessBuffer (byte[] buffer, int size, long globalOffset);
   }
 

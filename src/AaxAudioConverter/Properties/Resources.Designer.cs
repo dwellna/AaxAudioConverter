@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace audiamus.aaxconv.Properties {
+namespace AaxAudioConverter.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace audiamus.aaxconv.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("audiamus.aaxconv.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AaxAudioConverter.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -336,7 +336,7 @@ namespace audiamus.aaxconv.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to {\rtf1\ansi\deff3\adeflang1025
-        ///{\fonttbl{\f0\froman\fprq2\fcharset0 Times New Roman;}{\f1\froman\fprq2\fcharset2 Symbol;}{\f2\fswiss\fprq2\fcharset0 Arial;}{\f3\froman\fprq2\fcharset0 Liberation Serif{\*\falt Times New Roman};}{\f4\fswiss\fprq2\fcharset0 Liberation Sans{\*\falt Arial};}{\f5\fswiss\fprq2\fcharset0 Calibri Light;}{\f6\froman\fprq2\fcharset0 Calibri Light;}{\f7\froman\fprq2\fcharset0 Consolas;}{\f8\froman\fprq2\fcharset0 Liberation Mono{\*\falt Courier New};}{\f9\froman\fprq2\fcharset0 Libera [rest of string was truncated]&quot;;.
+        ///{\fonttbl{\f0\froman\fprq2\fcharset0 Times New Roman;}{\f1\froman\fprq2\fcharset2 Symbol;}{\f2\fswiss\fprq2\fcharset0 Arial;}{\f3\froman\fprq2\fcharset0 Liberation Serif{\*\falt Times New Roman};}{\f4\fswiss\fprq2\fcharset0 Calibri Light;}{\f5\froman\fprq2\fcharset0 Calibri Light;}{\f6\froman\fprq2\fcharset0 Consolas;}{\f7\froman\fprq2\fcharset0 Liberation Mono{\*\falt Courier New};}{\f8\froman\fprq2\fcharset0 Segoe UI;}{\f9\froman\fprq2\fcharset0 Liberation Sans{\*\falt Aria [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string LatestRtf {
             get {
